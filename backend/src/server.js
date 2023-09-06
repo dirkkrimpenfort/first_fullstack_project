@@ -4,6 +4,7 @@ const cors = require('cors');
 app.use(cors());
 app.use (express.json());
 
+
 require('dotenv').config();
 const PORT = process.env.PORT;
 
@@ -12,6 +13,10 @@ connect();
 
 const usersRouter = require('./routes/usersRouter');
 app.use('/api/users', usersRouter);
+
+app.use("/", express.static(path.join(__dirname, "/build"))); app.get("/*", (req, res) => res.sendFile(__dirname + "/build/index.html"));
+
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

@@ -17,7 +17,7 @@ const UserForm = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch("http://localhost:3001/api/users");
+      const res = await fetch("/api/users");
       const data = await res.json();
       setUsers(data);
     } catch (error) {

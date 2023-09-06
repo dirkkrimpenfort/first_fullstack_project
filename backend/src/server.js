@@ -14,7 +14,8 @@ connect();
 const usersRouter = require('./routes/usersRouter');
 app.use('/api/users', usersRouter);
 
-app.use("/", express.static(path.join(__dirname, "/src/build"))); app.get("/*", (req, res) => res.sendFile(__dirname + "src/build/index.html"));
+//app.use("/", express.static(path.join(__dirname, "/src/build"))); 
+//app.get("/*", (req, res) => res.sendFile(__dirname + "src/build/index.html"));
 
 
 

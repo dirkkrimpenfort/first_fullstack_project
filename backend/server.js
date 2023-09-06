@@ -11,12 +11,12 @@ const PORT = process.env.PORT;
 const { connect, closeConnection } = require('./configs/db.js');
 connect();
 
-const usersRouter = require('./routes/usersRouter');
+const usersRouter = require('./routes/usersRouter.js');
 app.use('/api/users', usersRouter);
 
-app.use("/", express.static(path.join(__dirname, "src/build"))); 
-app.get("/*", (req, res) => res.sendFile(__dirname + "src/build/index.html"));
-
+app.use("/", express.static(path.join(__dirname, "/build"))); 
+app.get("/*", (req, res) => res.sendFile(__dirname + "/build/index.html"));
+console.log(__dirname);
 
 
 app.listen(PORT, () => {
